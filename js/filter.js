@@ -13,7 +13,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
     };
 });
 
-var regex = /Maduro/i;
+var regex = /g1/i;
 var search = regex.exec(document.body.innerText);
 
 var selector = ":contains('traficante'),\
@@ -27,7 +27,10 @@ var selector = ":contains('traficante'),\
 :contains('sequestrado por'),\
 :contains('são morto'),\
 :contains('é morto'),\
-:contains('ser morta')\
+:contains('ser morta'),\
+:contains('tragédia'),\
+:contains('estupro'),\
+:contains('acidente')\
 ";
 
 
@@ -35,7 +38,6 @@ var selector = ":contains('traficante'),\
 function filterMild() {
 	console.log("Filtering Bad News with Mild filter...");
 	return $(selector).filter(".feed-post-body-title").closest('.bastian-feed-item');
-	return $(selector).filter(".highlight-text").closest('.highlight');
 }
 
 function filterDefault () {
@@ -62,8 +64,8 @@ function getElements(filter) {
 
 function filterElements(elements) {
 	console.log("Elements to filter: ", elements);
-	//elements.fadeOut("fast");
-	elements.replaceWith("<h2>Notícia removida</h2>")
+	elements.fadeOut("fast");
+	//elements.replaceWith("<h2>Notícia removida</h2>")
 }
 
 

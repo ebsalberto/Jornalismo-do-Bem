@@ -15,11 +15,10 @@
   "content_scripts": [
     { 
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "http://g1.globo.com/*",
+        "https://g1.globo.com/*"
       ],
       "exclude_globs": [
-        "*://*badnewsfilter.com*", 
         "*://*github.com*"
       ],
       "js": ["js/jquery-3.1.1.min.js", "js/filter.js"],
